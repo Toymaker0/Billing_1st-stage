@@ -4,7 +4,7 @@ const mongoose=require('mongoose')
 const userModel=require('./Models/Users')
 const jwt =require('jsonwebtoken')
 const cookie_parser=require('cookie-parser')
-
+const path = require('path')
 
 
 const app=express()
@@ -109,8 +109,8 @@ app.get('/getSession',(req,res)=>{
 })
 
 app.use(express.static(path.join(__dirname,'build')))
-app.get('/',(req,res)=>{
-    res.sendFile(require('path').join(__dirname,"build","index.html"))
+app.get('*',(req,res)=>{
+    res.sendFile(require('path').resolve(__dirname,"build","index.html"))
 })
 
 // app.use(express.static(path.join(__dirname, 'build')));
