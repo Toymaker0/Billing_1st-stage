@@ -15,7 +15,7 @@ app.use(cors(
 ))
 app.use(express.json())
 app.use(cookie_parser())
-mongoose.connect('mongodb://localhost:27017/Billing')
+mongoose.connect('mongodb+srv://Sree:1955@toy.dtwkmba.mongodb.net/Billing')
 
 
 
